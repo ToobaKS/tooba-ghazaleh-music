@@ -1,11 +1,19 @@
 import "./SongPage.scss";
+import { useEffect } from "react";
+import SongForm from "../../components/SongForm/SongForm";
+import SongLyric from "../../components/SongLyrics/SongLyrics";
+import randomArtist from "../../utils/RandomSong";
 
 function SongPage() {
+  useEffect(() => {
+    randomArtist();
+  }, []);
 
   return (
-    <section className="comment-section">
-      <h3 className="comment-section__heading">Songs</h3>
-    </section>
+    <main className="photo-page-content">
+      <SongLyric />
+      <SongForm />
+    </main>
   );
 }
 

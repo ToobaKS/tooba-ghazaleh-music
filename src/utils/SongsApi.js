@@ -1,19 +1,11 @@
-export class songs {
+import axios from "axios";
+
+export class SongsApi {
     constructor() {
-      this.baseURL = "https://api.deezer.com/";
+      this.baseURL = "https://api.deezer.com";
     }
   
-    async postComment(comment) {
-      try {
-        const request = `${this.baseURL}/comments/?api_key=${this.apiKey}`;
-        const response = await axios.post(request, comment);
-        return response;
-      } catch (error) {
-          console.error(error);
-      }
-    }
-  
-    async getComments() {
+    async getSongLyrics() {
       try {
         const request = `${this.baseURL}/comments/?api_key=${this.apiKey}`;
         let response = (await axios.get(request)).data;
@@ -24,7 +16,7 @@ export class songs {
       }
     }
   
-    async getShows() {
+    async getSongPreview() {
       try {
         const request = `${this.baseURL}/showdates/?api_key=${this.apiKey}`;
         const response = await axios.get(request);
@@ -34,10 +26,11 @@ export class songs {
       }
     }
   
-    async likeComment(id) {
+    async getArtistByGenre(id) {
       try {
-        const request = `${this.baseURL}/comments/${id}/like/?api_key=${this.apiKey}`;
-        const response = await axios.put(request);
+        const request = `${this.baseURL}/genre/${id}/artists`;
+        const response = await axios.get(request);
+        console.log(response);
         return response;
       } catch (error) {
           console.error(error);
