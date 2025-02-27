@@ -12,7 +12,7 @@ const App = () => {
         <Route path="/game/:genre" element={<GamePage />} />
       </Routes>
     </BrowserRouter>
-  );
-};
+)
+}
 
 export default App;
