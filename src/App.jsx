@@ -1,16 +1,18 @@
-import { useState } from "react";
-import "./App.css";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./components/HomePage/HomePage";
+import GamePage from "./components/GamePage/GamePage";
+import "./App.scss";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <>
-      <div>
-        hello
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/game/:genre" element={<GamePage />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
