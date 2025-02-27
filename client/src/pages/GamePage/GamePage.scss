@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+$primary-color: #ff3b30;
+$background-color: #f4f4f4;
+$text-color: #333;
+
+.game-page {
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+  margin: auto;
+  padding: 2rem;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 2.5rem;
+    color: $primary-color;
+    text-shadow: 2px 2px 0px #000;
+  }
+
+  .timer {
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background: #ffcccc; // Light red background for visibility
+    border: 2px solid $primary-color;
+    border-radius: 8px;
+    width: fit-content;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .artist {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  audio {
+    width: 90%;
+    max-width: 400px;
+    outline: none;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    margin: 1rem 0;
+  }
+
+  .lyrics {
+    text-transform: none !important; // Ensure lyrics are not all caps
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    line-height: 1.5;
+    color: $text-color;
+  }
+
+  .scoreboard {
+    margin: 1rem 0;
+    p {
+      margin: 0.3rem 0;
+      font-size: 1.2rem;
+    }
+  }
+
+  .back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: $primary-color;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.2s;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+}
